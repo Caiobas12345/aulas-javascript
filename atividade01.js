@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')();
 const inventario = [
     { nomeItem: "Espada do Amor", precoItem: 150, raridadeItem: "Raro", quantidadeEstoque: 10 },
     { nomeItem: "Escudo de Madeira", precoItem: 50, raridadeItem: "Comum", quantidadeEstoque: 0 },
