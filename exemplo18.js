@@ -1,1 +1,6 @@
-const dobro = n => n * 2;
+//const dobro = n => n * 2;
+//console.log(dobro(1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111));
+
+const eAdulto = idade => idade >= 18;
+
+console.log(eAdulto(22));
