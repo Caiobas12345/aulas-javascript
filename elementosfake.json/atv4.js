@@ -7,6 +7,7 @@ const elementosFake = [
 
 
 elementosFake.forEach(element => {
+    //For each percorre os elementos de um array
     console.log(`Nome do elemento: ${element.tagName}`);
     console.log(`Quantidade de classes: ${element.classList.length}`);
 });

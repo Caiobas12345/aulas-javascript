@@ -25,3 +25,5 @@ for (elemento of elementosModificados){
     }
 }
 console.log(elementosModificados)
+//adicionar um novo item no final de uma lista.
+//retornar o nome da tag HTML de um elemento em letras maiúsculas.

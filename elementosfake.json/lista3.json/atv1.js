@@ -22,3 +22,5 @@ for (const elemento of elementosFake) {
     elementosBackground.push(elemento)
 }
 console.log(elementosBackground)
+//adicionar um novo item no final de uma lista.
+//mudar a cor de fundo do elemento HTML

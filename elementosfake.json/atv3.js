@@ -5,7 +5,8 @@ const elementosFake = [
     { id: "tit1", tagName: "H1", style: "color: red;" }
 ];
 
-/
+
 elementosFake.forEach(element => {
     console.log(`Nome do elemento: ${element.tagName}`);
 });
+//sempre retorna o nome da tag em letras maiúsculas
