@@ -12,6 +12,7 @@ let produtosFormatados = apiProdutos.map(produto => ({
     // Já o map ele transforma uma lista(array) em uma nova lista
     nome: produto.nome.charAt(0).toUpperCase() + produto.nome.slice(1),
     precoFormatado: `R$ ${produto.preco.toFixed(2)}`
+    // serve para envolver uma string dentro de uma tag HTML
 })
 )
 
