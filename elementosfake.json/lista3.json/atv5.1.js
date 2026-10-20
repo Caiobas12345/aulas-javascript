@@ -20,7 +20,12 @@ const elementosFake = [
 let relatorioDeEstilos = []
 elementosFake.forEach(elemento => {
     let add = {id: elemento.id, tagName: elemento.tagName, style: elemento.style}
+    //Cria uma váriavel comum onde vai guardar um objeto
+    //Pega o id do elemento HTML original e salva botão, vai salvar BUTTON, se for um parágrafo, vai salvar 'p'
+    //Syte pega o estilo CSS incline atuais daquele elemento(como cor de fundo, tamanho de fonte,etc.)
+
     relatorioDeEstilos.push(add)  
+    //push adiciona um item no final deu uma lista(Array)
 });
 
 console.log(relatorioDeEstilos)
