@@ -1,7 +1,3 @@
-//Atividade 2: Use o forEach para iterar no array. Dentro dele, 
-// para cada elemento, use o for...in para verificar se a propriedade 
-// id existe. Se existir, altere o valor de id para que ele se torne uma 
-// string no formato "ID-01", "ID-02", etc. No final, exiba o array modificado.
 
 const elementosFake = [
     { id: 1, tagName: 'DIV', style: { color: 'blue', display: 'flex' }, classList: ['container', 'active'] },
@@ -17,6 +13,7 @@ const elementosFake = [
 ];
 let idsModificados = elementosFake
 idsModificados.forEach(elemento => {
+    //For each ele percorre todos os elementos
     for (const chave in elemento) {
         if (chave == "id") {
             elemento[chave] = `ID-${elemento[chave]}`
