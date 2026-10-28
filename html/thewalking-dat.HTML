@@ -1,49 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Walking Date</title>
-
-
 </head>
+
 <body>
     <header>
-        <h1 style = "color: darkred; text-align: center">
-    The Walking Date
+        <h1 style="color: darkred; text-align: center;">
+            The Walking Date
         </h1>
+
         <p>
             <em>
                 Encontre seu verdadeiro amor zumbi
             </em>
         </p>
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Início</a>
-                <li>
-                    <a href="index.html">Benefícios</a>
-            
-                    <li>
-                        <a href="index.html">Cadastro</a>
-            
-                    </li>
-                </li>
-            </li>
-                </li>
-            </li>
-        </ul>
-    </nav>
-    </header>
-    <main>
-        <section id="Boas vindas">
 
-        <h2>
-        Zumbis
-        </h2>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0V2_SLY8EQPa4dMB61HvJ6k66LMfNWuHC1zsQpj9uQ&s=10" style="display: block; margin: 0 auto;" alt="Casal de zumbis felizes">
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+                <li>
+                    <a href="#Benefícios">Benefícios</a>
+                </li>
+                <li>
+                    <a href="#Cadastro">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="Boas-vindas">
+            <h2>Zumbis</h2>
+
+            <figure>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0V2_SLY8EQPa4dMB61HvJ6k66LMfNWuHC1zsQpj9uQ&s=10"
+                    alt="Imagem de destaque de um casal zumbi">
+                <figcaption>Amor verdadeiro</figcaption>
+            </figure>
+        </section>
+
+        <section id="Benefícios">
+            <h2>Benefícios de namorar um zumbi</h2>
+
+            <p>Descubra as vantagens de encontrar seu amor!</p>
+
+            <ol>
+                <li id="Carnívoros">Amor eterno e verdadeiro</li>
+                <li>Companhia para o cemitério</li>
+                <li>Encontros com <strong>zumbis carnívoros</strong>.</li>
+            </ol>
+        </section>
+
+        <aside>
+            <h3>Dica do cupido zumbi</h3>
+            <p>Cuidado com encontros com pessoas armadas</p>
+        </aside>
+
+        <section id="depoimentos">
+            <h2>Depoimentos</h2>
+
+            <article>
+                <blockquote>
+                    Encontrei meu amor verdadeiro
+                    <cite>Zumbis apaixonados</cite>
+                </blockquote>
+            </article>
+        </section>
+
+        <section id="faq">
+            <h2>Perguntas Frequentes</h2>
+
+            <details>
+                <summary>Zumbis com só um olho podem participar?</summary>
+                <p>Sim, todos os zumbis são aceitos.</p>
+            </details>
+        </section>
+
+        <section id="planos">
+            <h2>Planos de assinatura</h2>
+
+            <table border="1">
+                <caption>Planos de assinatura</caption>
+
+                <thead>
+                    <tr>
+                        <th>Plano</th>
+                        <th>Benefícios</th>
+                        <th>Preço em cérebros</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Básico</td>
+                        <td>Perfil de namoro</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>Mensagem ilimitada</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Apocalipse</td>
+                        <td>Todos os benefícios</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="Cadastro">
+            <h2>Cadastro</h2>
+
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Seus dados mortais</legend>
+
+                    <label for="nome">Nome do zumbi:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <br><br>
+
+                    <label for="Email">E-mail para contato:</label>
+                    <input type="email" id="Email" name="email" required>
+
+                    <br><br>
+
+                    <p>Qual é sua dieta?</p>
+
+                    <input type="radio" id="miolos" name="dieta" value="miolos">
+                    <label for="miolos">Miolos</label>
+
+                    <input type="radio" id="musculos" name="dieta" value="musculos">
+                    <label for="musculos">Músculos</label>
+
+                    <input type="radio" id="Ambos" name="dieta" value="Ambos">
+                    <label for="Ambos">Ambos</label>
+
+                    <br><br>
+
+                    <label for="decomposicao">
+                        Nível de decomposição:
+                    </label>
+
+                    <select id="decomposicao" name="decomposicao">
+                        <option value="baixo">Baixo</option>
+                        <option value="medio">Médio</option>
+                        <option value="alto">Alto</option>
+                    </select>
+
+                    <br><br>
+
+                    <button type="submit" style="background-color: red; color: white;">
+                        Buscar partida
+                    </button>
+                </fieldset>
+            </form>
         </section>
     </main>
 
+    <footer>
+        <small>
+            &copy; 2026 - Site de namoro zumbi. Todos os direitos reservados.
+        </small>
+    </footer>
 </body>
+
 </html>
