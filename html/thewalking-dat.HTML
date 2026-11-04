@@ -5,47 +5,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Walking Date</title>
+
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: sans-serif;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: darkred;
+            text-align: center;
+        }
+
+        button[type="submit"] {
+            background-color: red;
+            color: rgb(73, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        :root{
+     --cor-sangue: #ffffff;
+     --cor-zumbi: #2e8b57;
+
+
+        }
+        header{
+     background-color:#000000;
+     padding:20px 40px;
+     display:flex;
+     justify-content:space-between;
+    align-items: center;
+     color:var(--cor-sangue);
+        }
+        nav ul{
+     display: flex;
+      gap:25;
+      list-style: none;
+      
+        }
+        nav a{
+
+            text-decoration: none;
+            color:#ffffff;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition:color 0.3s ease;
+        }
+        nav a:hover{
+            color: var(--cor-zumbi);
+        }
+        main{
+     max-width:1000px;
+     margin: 40px auto;
+     }
+     section{
+     margin-bottom: 60px;
+     color: var(--cor-zumbi);
+     border-bottom: 2px;
+     solid var(--cor-sangue);
+     padding-bottom: 10px;
+
+
+     }
+
+
+
+
+
+        
+
+
+
+        
+
+
+    </style>
 </head>
 
 <body>
+
     <header>
-        <h1 style="color: darkred; text-align: center;">
-            The Walking Date
-        </h1>
+        
+
+        <h1>The Walking Date</h1>
+        
 
         <p>
-            <em>
-                Encontre seu verdadeiro amor zumbi
-            </em>
+            <em>Encontre seu verdadeiro amor zumbi</em>
         </p>
 
         <nav>
             <ul>
-                <li>
-                    <a href="index.html">Início</a>
-                </li>
-                <li>
-                    <a href="#Benefícios">Benefícios</a>
-                </li>
-                <li>
-                    <a href="#Cadastro">Cadastro</a>
-                </li>
+                
+
+
+
+                
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#Benefícios">Benefícios</a></li>
+                <li><a href="#Cadastro">Cadastro</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
+
         <section id="Boas-vindas">
+
             <h2>Zumbis</h2>
 
             <figure>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz0V2_SLY8EQPa4dMB61HvJ6k66LMfNWuHC1zsQpj9uQ&s=10"
-                    alt="Imagem de destaque de um casal zumbi">
+                <img
+                    src="https://gstatic.com"
+                    alt="Imagem de destaque de um casal zumbi"
+                >
+
                 <figcaption>Amor verdadeiro</figcaption>
             </figure>
+
         </section>
 
         <section id="Benefícios">
+
             <h2>Benefícios de namorar um zumbi</h2>
 
             <p>Descubra as vantagens de encontrar seu amor!</p>
@@ -55,14 +140,19 @@
                 <li>Companhia para o cemitério</li>
                 <li>Encontros com <strong>zumbis carnívoros</strong>.</li>
             </ol>
+
         </section>
 
         <aside>
+
             <h3>Dica do cupido zumbi</h3>
+
             <p>Cuidado com encontros com pessoas armadas</p>
+
         </aside>
 
         <section id="depoimentos">
+
             <h2>Depoimentos</h2>
 
             <article>
@@ -71,21 +161,27 @@
                     <cite>Zumbis apaixonados</cite>
                 </blockquote>
             </article>
+
         </section>
 
         <section id="faq">
+
             <h2>Perguntas Frequentes</h2>
 
             <details>
                 <summary>Zumbis com só um olho podem participar?</summary>
+
                 <p>Sim, todos os zumbis são aceitos.</p>
             </details>
+
         </section>
 
         <section id="planos">
+
             <h2>Planos de assinatura</h2>
 
             <table border="1">
+
                 <caption>Planos de assinatura</caption>
 
                 <thead>
@@ -102,25 +198,32 @@
                         <td>Perfil de namoro</td>
                         <td>10</td>
                     </tr>
+
                     <tr>
                         <td>Premium</td>
                         <td>Mensagem ilimitada</td>
                         <td>25</td>
                     </tr>
+
                     <tr>
                         <td>Apocalipse</td>
                         <td>Todos os benefícios</td>
                         <td>50</td>
                     </tr>
                 </tbody>
+
             </table>
+
         </section>
 
         <section id="Cadastro">
+
             <h2>Cadastro</h2>
 
             <form action="#" method="POST">
+
                 <fieldset>
+
                     <legend>Seus dados mortais</legend>
 
                     <label for="nome">Nome do zumbi:</label>
@@ -158,19 +261,24 @@
 
                     <br><br>
 
-                    <button type="submit" style="background-color: red; color: white;">
-                        Buscar partida
-                    </button>
+                    <button type="submit">Buscar partida</button>
+
                 </fieldset>
+
             </form>
+
         </section>
+
     </main>
 
     <footer>
+
         <small>
             &copy; 2026 - Site de namoro zumbi. Todos os direitos reservados.
         </small>
+
     </footer>
+
 </body>
 
 </html>
