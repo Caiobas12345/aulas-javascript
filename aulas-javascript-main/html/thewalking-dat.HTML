@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Walking Date</title>
+
+    <style>
+      
+:root {
+    --cor-sangue: #8b0000;
+    --cor-zumbi: #2e8b57;
+    --cor-fundo-base: #1a1a1a;
+    --cor-texto-base: #e0e0e0;
+    --cor-superficie: #222222;
+    --cor-card: #292929;
+    --espaco-p: 8px;
+    --espaco-m: 16px;
+    --espaco-g: 32px;
+    --borda-suave: 8px;
+    --borda-arredondada: 50px;
+    --fonte-principal: Arial, sans-serif;
+    --sombra-padrao: 0 4px 8px rgba(0,0,0,0.5);
+    --transicao-rapida: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-base);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    margin: 0;
+}
+
+h1 {
+    color: var(--cor-sangue);
+    text-align: center;
+    font-size: calc(1.5rem + 1vw);
+}
+
+header {
+    background-color: #000;
+    padding: var(--espaco-g);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--cor-sangue);
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color var(--transicao-rapida);
+}
+
+nav a:hover {
+    color: var(--cor-zumbi);
+}
+
+main {
+    max-width: 1000px;
+    width: calc(100% - var(--espaco-g) * 2);
+    margin: 40px auto;
+}
+
+section {
+    margin-bottom: 60px;
+    color: var(--cor-zumbi);
+    border-bottom: 2px solid var(--cor-sangue);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    filter: grayscale(80%) sepia(80%);
+    transition: filter 0.5s ease;
+}
+
+img:hover {
+    filter: none;
+}
+
+figcaption {
+    font-style: italic;
+    color: #888;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+#beneficios ol {
+    padding-left: 35px;
+    text-align: left;
+}
+
+#beneficios li {
+    background-color: var(--cor-card);
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--cor-zumbi);
+    border-radius: 5px;
+    transition: background-color var(--transicao-rapida);
+}
+
+#beneficios li:hover {
+    background-color: #333;
+}
+
+ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+    text-align: left;
+}
+
+strong {
+    color: var(--cor-sangue);
+}
+
+p {
+    margin-top: 15px;
+    color: #bbb;
+}
+
+aside {
+    background-color: var(--cor-superficie);
+    padding: 20px;
+    border-radius: var(--borda-suave);
+    border: 1px dashed var(--cor-zumbi);
+    margin-bottom: 40px;
+    box-shadow: var(--sombra-padrao);
+    transition: all var(--transicao-rapida);
+}
+
+aside:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    transform: translateY(-5px);
+}
+
+blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    border-left: 5px solid var(--cor-zumbi);
+    padding-left: 20px;
+    color: var(--cor-zumbi);
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    color: var(--cor-sangue);
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--cor-zumbi);
+    color: white;
+}
+
+fieldset {
+    border: 2px solid var(--cor-zumbi);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: var(--cor-zumbi);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--cor-sangue);
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: 2px solid var(--cor-zumbi);
+    outline-offset: 2px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 15px;
+    border-left: 4px solid var(--cor-sangue);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--cor-zumbi);
+}
+
+.dieta-container {
+    margin: 15px 0 25px;
+    text-align: left;
+}
+
+.dieta-opcao {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.dieta-opcao input {
+    margin-right: 8px;
+    cursor: pointer;
+    width: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+}
+
+@media (max-width: 767px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        padding: 0;
+        flex-direction: column;
+        gap: var(--espaco-p);
+    }
+
+    .dieta-opcao {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    #beneficios {
+        flex-direction: column;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: var(--espaco-g);
+    }
+
+    #beneficios {
+        flex-direction: row;
+    }
+
+    :root {
+        --espaco-m: 24px;
+        --espaco-g: 48px;
+    }
+
+    button {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+@media (prefers-color-scheme: light){
+ :root{
+ --cor-fundo-base: #f4f4f9;
+ --cor-texto-base:#111111;
+ --cor-superficie:  #ffffff;
+ --cor-borda: #cccccc;
+ }
+}
+html[data-theme='light']{
+    data-theme:light;
+     --cor-superficie:  #ffffff;
+ --cor-borda: #cccccc;
+  --cor-fundo-base: #f4f4f9;
+ --cor-texto-base:#111111;
+ --cor-sangue: #cc0000;
+   --cor-zumbi: #006400;
+   --cor-input-fundo: #ffffff;
+   --cor-input-texto: #333333;
+   background-color: var(--cor-input-fundo), #333;
+   color: var(--cor-input-texto, #fff);
+}
+#btn-tema{
+border-radius:var(--borda-arredondada);
+padding: var(--espaco-p) var(--espaco-m);
+position:fixed;
+bottom: 20px; right: 20px; z-index: 100;
+background-color:var(--cor-texto-base);
+color:var(--cor-fundo-base);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <button id="btn-tema">Alternar Sobrevivência(tema)</button>
+        <h1>The Walking Date</h1>
+        <p><em>Encontre seu verdadeiro amor zumbi</em></p>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="#Benefícios">Benefícios</a></li>
+                <li><a href="#Cadastro">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="Boas-vindas">
+            <h2>Zumbis</h2>
+
+            <figure>
+                <img src="imagem.jpg" alt="Imagem de destaque de um casal zumbi">
+                <figcaption>Amor verdadeiro</figcaption>
+            </figure>
+        </section>
+
+        <section id="Benefícios">
+            <h2>Benefícios de namorar um zumbi</h2>
+            <p>Descubra as vantagens de encontrar seu amor!</p>
+
+            <ol>
+                <li id="Carnívoros">Amor eterno e verdadeiro</li>
+                <li>Companhia para o cemitério</li>
+                <li>Encontros com <strong>zumbis carnívoros</strong>.</li>
+            </ol>
+        </section>
+
+        <aside>
+            <h3>Dica do cupido zumbi</h3>
+            <p>Cuidado com encontros com pessoas armadas</p>
+        </aside>
+
+        <section id="depoimentos">
+            <h2>Depoimentos</h2>
+
+            <article>
+                <blockquote>
+                    "Encontrei meu amor verdadeiro"
+                    <cite>Zumbis apaixonados</cite>
+                </blockquote>
+            </article>
+        </section>
+
+        <section id="vampiros">
+            <h2>Área Vip: Vampiros Apaixonados também amam</h2>
+
+            <figure>
+                <img src="imagem.jpg" alt="Casal de vampiros em estilo gótico">
+                <figcaption>O amor atravessa séculos e a imortalidade</figcaption>
+            </figure>
+        </section>
+
+        <section id="faq">
+            <h2>Perguntas Frequentes</h2>
+
+            <details>
+                <summary>Zumbis com só um olho podem participar?</summary>
+                <p>Sim, todos os zumbis são aceitos.</p>
+            </details>
+        </section>
+
+        <section id="planos">
+            <h2>Planos de assinatura</h2>
+
+            <table>
+                <caption>Planos de assinatura</caption>
+
+                <thead>
+                    <tr>
+                        <th>Plano</th>
+                        <th>Benefícios</th>
+                        <th>Preço em cérebros</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Básico</td>
+                        <td>Perfil de namoro</td>
+                        <td>10</td>
+                    </tr>
+
+                    <tr>
+                        <td>Premium</td>
+                        <td>Mensagem ilimitada</td>
+                        <td>25</td>
+                    </tr>
+
+                    <tr>
+                        <td>Apocalipse</td>
+                        <td>Todos os benefícios</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="Cadastro">
+            <h2>Cadastro</h2>
+
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Seus dados mortais</legend>
+
+                    <label for="nome">Nome do zumbi / criatura:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="Email">E-mail para contato:</label>
+                    <input type="email" id="Email" name="email" required>
+
+                    <p style="text-align: left; font-weight: bold; color: var(--cor-zumbi);">
+                        Qual é sua dieta?
+                    </p>
+
+                    <div class="dieta-container">
+                        <label class="dieta-opcao">
+                            <input type="radio" id="miolos" name="dieta" value="miolos">
+                            Miolos
+                        </label>
+
+                        <label class="dieta-opcao">
+                            <input type="radio" id="musculos" name="dieta" value="musculos">
+                            Músculos
+                            
+                        </label>
+                    </div>
+                    <button type="submit">Encontrar meu match</button>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
