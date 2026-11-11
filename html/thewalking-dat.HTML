@@ -11,8 +11,8 @@
             --cor-zumbi: #2e8b57;
         }
 
-        body {
-            background-color: #1a1a1a;
+           body {
+                background-color: #1a1a1a;
             color: #e0e0e0;
             font-family: sans-serif;
             line-height: 1.6;
@@ -38,17 +38,17 @@
             list-style: none;
         }
 
-        nav a {
+         nav a {
             text-decoration: none;
             color: #ffffff;
             font-weight: bold;
             text-transform: uppercase;
             transition: color 0.3s ease;
-        }
+        } 
 
-        nav a:hover {
+         nav a:hover {
             color: var(--cor-zumbi);
-        }
+        } 
 
         main {
             max-width: 1000px;
@@ -64,15 +64,18 @@
             text-align: center;
         }
 
-        img {
+         img {
             max-width: 100%;
+            width:100%;
             height: auto;
             border-radius: 12px;
             filter: grayscale(80%) sepia(80%);
             transition: filter 0.5s ease;
-        }
+        
+        } 
 
         img:hover {
+            
             filter: none;
         }
 
@@ -84,6 +87,25 @@
             justify-content: center;
             gap: 40px;
         }
+        #beneficios ol {
+    padding-left: 35px;
+    flex-direction: column;
+}
+
+
+#beneficios li {
+    background-color: var(--cor-card);
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--cor-zumbi);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+#beneficios li:hover {
+    background-color: #333333;
+}
 
         ol {
             padding-left: 20px;
@@ -119,6 +141,7 @@
             display: block;
             text-align: right;
             color: darkred;
+            overflow-x: auto;
         }
 
         table {
@@ -237,7 +260,7 @@
             nav ul {
                 padding: 0;
                 flex-direction: column;
-                gap: 10px;
+                gap:var(--espaco-p);
             }
 
             .dieta-opcao {
@@ -245,6 +268,69 @@
                 margin-bottom: 10px;
             }
         }
+        :root{
+      --cor-fundo-base:#1a1a1a;
+      --cor-texto-base: #e0e0e0;
+      --cor-superficie: #222222;
+      --espaco-p: 8px;
+      --espaco-m: 16px;
+      --espaco-g: 32px;
+      --borda-suave: 8px;
+      --borda-arredondada: 50px;
+      --fonte-principal: 'Arial', sans serif;
+        }
+        body{
+       background-color: var(--cor-fundo-base);
+       color: var(--cor-texto-base);
+       font-family: var(--fonte-principal);
+        }
+        header{
+        padding: var(--espaço-m);
+     padding:var(--espaco-g);
+     flex-direction: column;
+     text-align: center;
+        }
+        aside{
+       background-color: var(--cor-superficie);
+       border-radius: var(--borda-suave);
+    
+        }
+        botao-match{
+       --cor-botao: var(--cor-zumbi);
+       background-color: var(--cor-botao);
+        }
+        main{
+       max-width:1000px;
+       width:calc(100% var(--espaco-g)*2);
+      max-width: 1000px
+
+        }
+        h1{
+            font-size: calc(1.5rem + 1vw);
+
+        }
+        botao-match-hover{
+        --cor-botao:var(--cor-sangue);
+
+        }
+        :root{
+            --sombra-padrao: 0 4px 8px rgba(0,0,0,0.5);
+        box-shadow: var(--sombra-padrao);
+        --transicao-rapida: 0.3s ease;
+        transition: all var(--transicao-rapida);
+
+        }
+        cartao-zumbi-hover{
+       box-shadow: 0 8px calc(var(--espaço-m)*1.5) rgba(0,0,0,0.7);
+       transform: translate(-5px);
+        }
+        @media(max-width: 768px){
+       
+
+
+        }
+
+
     </style>
 </head>
 
@@ -381,8 +467,10 @@
                         <label class="dieta-opcao">
                             <input type="radio" id="musculos" name="dieta" value="musculos">
                             Músculos
+                            
                         </label>
                     </div>
+                    <button type="submit">Encontrar meu match</button>
                 </fieldset>
             </form>
         </section>
