@@ -6,14 +6,24 @@
     <title>The Walking Date</title>
 
     <style>
-      
+
 :root {
+    color-scheme: dark;
     --cor-sangue: #8b0000;
     --cor-zumbi: #2e8b57;
     --cor-fundo-base: #1a1a1a;
     --cor-texto-base: #e0e0e0;
     --cor-superficie: #222222;
     --cor-card: #292929;
+    --cor-card-hover: #333;
+    --cor-borda: #444;
+    --cor-texto-secundario: #bbb;
+    --cor-input-fundo: #333;
+    --cor-input-texto: #fff;
+    --cor-header: #000;
+    --cor-nav: #fff;
+    --cor-legenda: #888;
+    --sombra-hover: 0 8px 24px rgba(0,0,0,0.7);
     --espaco-p: 8px;
     --espaco-m: 16px;
     --espaco-g: 32px;
@@ -22,6 +32,70 @@
     --fonte-principal: Arial, sans-serif;
     --sombra-padrao: 0 4px 8px rgba(0,0,0,0.5);
     --transicao-rapida: 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --cor-sangue: #cc0000;
+        --cor-zumbi: #006400;
+        --cor-fundo-base: #f4f4f9;
+        --cor-texto-base: #111111;
+        --cor-superficie: #ffffff;
+        --cor-card: #ffffff;
+        --cor-card-hover: #eaeaf2;
+        --cor-borda: #cccccc;
+        --cor-texto-secundario: #444;
+        --cor-input-fundo: #ffffff;
+        --cor-input-texto: #333333;
+        --cor-header: #ffffff;
+        --cor-nav: #111111;
+        --cor-legenda: #555;
+        --sombra-padrao: 0 4px 8px rgba(0,0,0,0.15);
+        --sombra-hover: 0 8px 24px rgba(0,0,0,0.25);
+    }
+
+    :root:has(#chk-tema:checked) {
+        color-scheme: dark;
+        --cor-sangue: #8b0000;
+        --cor-zumbi: #2e8b57;
+        --cor-fundo-base: #1a1a1a;
+        --cor-texto-base: #e0e0e0;
+        --cor-superficie: #222222;
+        --cor-card: #292929;
+        --cor-card-hover: #333;
+        --cor-borda: #444;
+        --cor-texto-secundario: #bbb;
+        --cor-input-fundo: #333;
+        --cor-input-texto: #fff;
+        --cor-header: #000;
+        --cor-nav: #fff;
+        --cor-legenda: #888;
+        --sombra-padrao: 0 4px 8px rgba(0,0,0,0.5);
+        --sombra-hover: 0 8px 24px rgba(0,0,0,0.7);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:has(#chk-tema:checked) {
+        color-scheme: light;
+        --cor-sangue: #cc0000;
+        --cor-zumbi: #006400;
+        --cor-fundo-base: #f4f4f9;
+        --cor-texto-base: #111111;
+        --cor-superficie: #ffffff;
+        --cor-card: #ffffff;
+        --cor-card-hover: #eaeaf2;
+        --cor-borda: #cccccc;
+        --cor-texto-secundario: #444;
+        --cor-input-fundo: #ffffff;
+        --cor-input-texto: #333333;
+        --cor-header: #ffffff;
+        --cor-nav: #111111;
+        --cor-legenda: #555;
+        --sombra-padrao: 0 4px 8px rgba(0,0,0,0.15);
+        --sombra-hover: 0 8px 24px rgba(0,0,0,0.25);
+    }
 }
 
 * {
@@ -34,6 +108,7 @@ body {
     font-family: var(--fonte-principal);
     line-height: 1.6;
     margin: 0;
+    transition: background-color var(--transicao-rapida), color var(--transicao-rapida);
 }
 
 h1 {
@@ -43,7 +118,7 @@ h1 {
 }
 
 header {
-    background-color: #000;
+    background-color: var(--cor-header);
     padding: var(--espaco-g);
     display: flex;
     justify-content: space-between;
@@ -60,7 +135,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color: var(--cor-nav);
     font-weight: bold;
     text-transform: uppercase;
     transition: color var(--transicao-rapida);
@@ -99,7 +174,7 @@ img:hover {
 
 figcaption {
     font-style: italic;
-    color: #888;
+    color: var(--cor-legenda);
     margin-top: 10px;
     display: flex;
     justify-content: center;
@@ -113,6 +188,7 @@ figcaption {
 
 #beneficios li {
     background-color: var(--cor-card);
+    color: var(--cor-texto-base);
     padding: 12px 18px;
     margin-bottom: 12px;
     border-left: 4px solid var(--cor-zumbi);
@@ -121,7 +197,7 @@ figcaption {
 }
 
 #beneficios li:hover {
-    background-color: #333;
+    background-color: var(--cor-card-hover);
 }
 
 ol {
@@ -137,7 +213,7 @@ strong {
 
 p {
     margin-top: 15px;
-    color: #bbb;
+    color: var(--cor-texto-secundario);
 }
 
 aside {
@@ -151,7 +227,7 @@ aside {
 }
 
 aside:hover {
-    box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    box-shadow: var(--sombra-hover);
     transform: translateY(-5px);
 }
 
@@ -180,7 +256,7 @@ table {
 }
 
 th, td {
-    border: 1px solid #444;
+    border: 1px solid var(--cor-borda);
     padding: 15px;
     text-align: center;
 }
@@ -219,9 +295,9 @@ select {
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 4px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
+    background-color: var(--cor-input-fundo);
+    color: var(--cor-input-texto);
+    border: 1px solid var(--cor-borda);
 }
 
 input:focus,
@@ -269,7 +345,45 @@ footer {
     text-align: center;
     padding: 30px;
     margin-top: 40px;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--cor-borda);
+}
+
+#chk-tema {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+}
+
+#btn-tema {
+    display: inline-block;
+    margin: 0;
+    border: none;
+    border-radius: var(--borda-arredondada);
+    padding: var(--espaco-p) var(--espaco-m);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--cor-texto-base);
+    color: var(--cor-fundo-base);
+    box-shadow: var(--sombra-padrao);
+    transition: background-color 0.2s ease;
+}
+
+#btn-tema:hover {
+    background-color: var(--cor-zumbi);
+    color: #fff;
+}
+
+#chk-tema:focus-visible + #btn-tema {
+    outline: 2px solid var(--cor-zumbi);
+    outline-offset: 2px;
 }
 
 @media (max-width: 767px) {
@@ -330,50 +444,6 @@ footer {
         margin: 0 auto;
     }
 }
-@media (prefers-color-scheme: light){
- :root{
- --cor-fundo-base: #f4f4f9;
- --cor-texto-base:#111111;
- --cor-superficie:  #ffffff;
- --cor-borda: #cccccc;
- }
-}
-html[data-theme='light']{
-    data-theme:light;
-     --cor-superficie:  #ffffff;
- --cor-borda: #cccccc;
-  --cor-fundo-base: #f4f4f9;
- --cor-texto-base:#111111;
- --cor-sangue: #cc0000;
-   --cor-zumbi: #006400;
-   --cor-input-fundo: #ffffff;
-   --cor-input-texto: #333333;
-   background-color: var(--cor-input-fundo), #333;
-   color: var(--cor-input-texto, #fff);
-}
-#btn-tema{
-border-radius:var(--borda-arredondada);
-padding: var(--espaco-p) var(--espaco-m);
-position:fixed;
-bottom: 20px; right: 20px; z-index: 100;
-background-color:var(--cor-texto-base);
-color:var(--cor-fundo-base);
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-        
 
     </style>
 </head>
@@ -381,7 +451,8 @@ color:var(--cor-fundo-base);
 <body>
 
     <header>
-        <button id="btn-tema">Alternar Sobrevivência(tema)</button>
+        <input type="checkbox" id="chk-tema">
+        <label for="chk-tema" id="btn-tema">Alternar Sobrevivência(tema)</label>
         <h1>The Walking Date</h1>
         <p><em>Encontre seu verdadeiro amor zumbi</em></p>
 
@@ -512,7 +583,6 @@ color:var(--cor-fundo-base);
                         <label class="dieta-opcao">
                             <input type="radio" id="musculos" name="dieta" value="musculos">
                             Músculos
-                            
                         </label>
                     </div>
                     <button type="submit">Encontrar meu match</button>
